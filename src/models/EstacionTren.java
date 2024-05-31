@@ -4,13 +4,13 @@ public class EstacionTren {
     private Integer id;
     private String nombre;
     private String ubicacion;
-    private Zona zona;
+    private Municipio municipio;
 
-    public EstacionTren(Integer id, String nombre, String ubicacion, Zona zona) {
+    public EstacionTren(Integer id, String nombre, String ubicacion, Municipio municipio) {
         this.id = id;
         this.nombre = nombre;
         this.ubicacion = ubicacion;
-        this.zona = zona;
+        this.municipio = municipio;
     }
 
     public Integer getId() {
@@ -37,11 +37,11 @@ public class EstacionTren {
         this.ubicacion = ubicacion;
     }
 
-    public Zona getZona() {
-        return zona;
+    public Municipio getMunicipio() {
+        return municipio;
     }
 
-    public void setZona(Zona zona) {
-        this.zona = zona;
+    public void setMunicipio(Municipio municipio) {
+        this.municipio = municipio;
     }
 }

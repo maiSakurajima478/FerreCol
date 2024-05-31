@@ -4,7 +4,6 @@ import models.EstacionTren;
 import models.Municipio;
 import models.Publicacion;
 import models.Usuario;
-import models.Zona;
 import models.Departamento;
 
 public class App {
@@ -12,8 +11,7 @@ public class App {
 
         Departamento departamento_1 = new Departamento(1, "Boyaca");
         Municipio municipio_1 = new Municipio(1, "Example Municipio", departamento_1);
-        Zona zona_1 = new Zona(1, "Example Zona", municipio_1);
-        EstacionTren estacion_1 = new EstacionTren(1, "Example Name", "Example Ubicacion", zona_1);
+        EstacionTren estacion_1 = new EstacionTren(1, "Example Name", "Example Ubicacion", municipio_1);
 
         Usuario user_1 = new Usuario(1, "fundation01@gmail.com", "example123", "2023-12-04", Rol.FUNDACION);
 
@@ -30,9 +28,9 @@ public class App {
         System.out.println("Posteado: "+publicacion_1.getFecha_creacion());
         System.out.println("Usuario: "+publicacion_1.getUsuario().getCorreo());
         System.out.println("Estacion: "+publicacion_1.getEstacion_tren().getNombre());
-        System.out.println("Zona: "+publicacion_1.getEstacion_tren().getZona().getNombre());
-        System.out.println("Municipio: "+publicacion_1.getEstacion_tren().getZona().getMunicipio().getNombre());
-        System.out.println("Departamento: "+publicacion_1.getEstacion_tren().getZona().getMunicipio().getDepartamento().getNombre());
+        System.out.println("Ubicacion: "+publicacion_1.getEstacion_tren().getUbicacion());
+        System.out.println("Municipio: "+publicacion_1.getEstacion_tren().getMunicipio().getNombre());
+        System.out.println("Departamento: "+publicacion_1.getEstacion_tren().getMunicipio().getDepartamento().getNombre());
 
         System.out.println("\n\t\t==== Mostrando Comentarios Publicacion  =====");
         if(comentario_1.getPublicacion().getId() == publicacion_1.getId()){
